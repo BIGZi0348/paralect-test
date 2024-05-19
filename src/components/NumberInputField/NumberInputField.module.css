@@ -1,0 +1,45 @@
+.input {
+  width: 138px;
+  border-radius: 8px;
+  transition: all 150ms ease;
+  font-family: 'Inter-Regular';
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 20px;
+  color: var(--black);
+  font-style: normal;
+
+}
+
+.input:hover {
+  border: 1px solid var(--main500)
+}
+
+.input:focus {
+  border: 1px solid var(--main500)
+}
+
+.section {
+  --input-bd: transparent;
+}
+
+.controls {
+  justify-content: center;
+}
+
+.control{
+  flex: none;
+  height: 13px;
+  width: 27px;
+  color: var(--grey500);
+  transition: all 150ms ease;
+}
+
+.control:hover {
+  background-color: transparent;
+  color: var(--main400);
+}
+
+.control:active {
+  color: var(--main500);
+}

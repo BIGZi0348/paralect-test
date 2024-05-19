@@ -1,0 +1,44 @@
+:root {
+  --white:#FFFFFF;
+  --grey100:#F5F5F6;
+  --grey200:#EAEBED;
+  --grey300:#D5D6DC;
+  --grey500:#ACADB9;
+  --grey600:#7B7C88;
+  --black:#000000;
+
+  --main100:#F2EBF9;
+  --main200:#E5D5FA;
+  --main300:#D1B4F8;
+  --main400:#BD93F7;
+  --main500:#9854F6;
+  --main600:#541F9D;
+}
+
+@font-face {
+  font-family: Inter-Regular;
+  src: url(../fonts/Inter-Regular.woff);
+  font-weight: normal;
+  font-style: normal; 
+}
+
+@font-face {
+  font-family: Inter-SemiBold;
+  src: url(../fonts/Inter-SemiBold.woff);
+  font-weight: normal;
+  font-style: normal; 
+}
+
+@font-face {
+  font-family: Inter-Bold;
+  src: url(../fonts/Inter-Bold.woff);
+  font-weight: normal;
+  font-style: normal; 
+}
+
+@font-face {
+  font-family: poppins;
+  src: url(../fonts/poppins.woff);
+  font-weight: normal;
+  font-style: normal; 
+}

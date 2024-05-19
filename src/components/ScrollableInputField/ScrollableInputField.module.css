@@ -1,0 +1,47 @@
+.root {
+  width: 100%;
+}
+
+.input {
+  border-radius: 8px;
+  transition: all 150ms ease;
+  font-family: 'Inter-Regular';
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 20px;
+  color: var(--black);
+  font-style: normal;
+}
+
+.dropdown {
+  border-radius: 8px;
+}
+
+.option {
+  &[data-combobox-selected] {
+    color: var(--black);
+    background-color: var(--main100);
+    border-radius: 8px;
+  }
+}
+
+.option {
+  &[data-combobox-active] {
+    color: var(--white);
+    background-color: var(--main500);
+    border-radius: 8px;
+  }
+}
+
+.scrollbar:hover {
+    background-color: transparent;
+  }
+
+
+.input:hover {
+  border: 1px solid var(--main500)
+}
+
+.input:focus {
+  border: 1px solid var(--main500)
+}

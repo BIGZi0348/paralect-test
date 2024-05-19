@@ -1,0 +1,124 @@
+.pagination {
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: space-between;
+    padding: 0px;
+    width: fit-content;
+    height: 32px;
+    display: flex;
+    position: relative;
+    margin-top: 8px;
+  }
+
+  .control {
+    font-family: 'Inter-Regular';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 22.4px;
+    text-align: center;
+    color: var(--black);
+    border-radius: 6px;
+    border: 1px solid var(--grey300);
+    transition: all 150ms ease;
+  }
+  
+  .control:active {
+    animation: none;
+    transform: none;
+  }
+  
+  .control:disabled {
+    opacity: 1;
+    color: var(--grey300);
+    border: 1px solid var(--grey200);
+  }
+  
+  .control:where([data-active]) {
+    color: var(--white);
+    background-color: var(--main500);
+    border: 1px solid var(--main500);
+  }
+  
+  .control:where([data-active]):hover {
+    background-color: var(--main500);
+  }
+
+  /* ################################### */
+  /* ################################### */
+  /* ################################### */
+
+  .button {
+    font-family: 'Inter-Regular';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 22.4px;
+    text-align: center;
+    color: var(--black);
+    padding: 0px;
+    height: 32px;
+    min-width: 32px;
+    width: fit-content;
+    border-radius: 6px;
+    border: 1px solid var(--grey300);
+    transition: all 150ms ease;
+    background-color: var(--white);
+  }
+
+  .button:active {
+    animation: none;
+    transform: none;
+  }
+  
+  .button:disabled {
+    opacity: 1;
+    border: 1px solid var(--grey200)
+  }
+
+  .button:disabled:hover {
+    opacity: 1;
+    background-color: var(--white);
+  }
+  
+  .button:hover {
+    color: var(--black);
+    background-color: var(--white);
+  }
+
+  .buttonCurrent {
+    font-family: 'Inter-Regular';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 22.4px;
+    text-align: center;
+    color: var(--white);
+    padding: 0px;
+    height: 32px;
+    min-width: 32px;
+    width: fit-content;
+    border-radius: 6px;
+    transition: all 150ms ease;
+    background-color: var(--main500);
+    border: 1px solid var(--main500);
+  }
+
+  .buttonCurrent:active {
+    animation: none;
+    transform: none;
+  }
+
+  .buttonCurrent:hover {
+    background-color: var(--main500);
+  }
+
+  .icon{
+    fill: var(--grey600);
+    transition: all 150ms ease;
+  }
+
+  .iconDisabled{
+    fill: var(--grey300);
+    transition: all 150ms ease;
+  }

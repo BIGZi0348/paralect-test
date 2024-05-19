@@ -1,0 +1,119 @@
+.divBottom {
+    margin-bottom: 16px;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-end;
+    padding: 0px;
+    width: 980px;
+    height: 72px;
+    display: flex;
+    position: relative;
+  }
+
+  .sortGenres {
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: flex-start;
+    padding: 0px;
+    width: 283.67px;
+    height: 72px;
+    display: flex;
+  }
+
+  .p {
+    color: var(--black);
+    font-family: "Inter-Regular";
+    font-weight: 700;
+    font-style: normal; 
+    line-height: 22.4px;
+    text-align: left;
+    font-size: 16px;
+    margin: 0;
+    margin-bottom: 8px;
+  }
+
+  .sortReleaseYear {
+    justify-content: space-between;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 0px;
+    width: 283.67px;
+    height: 72px;
+    display: flex;
+  }
+
+  .sortRatings {
+    justify-content: space-between;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 0px;
+    width: 283.67px;
+    height: 72px;
+    display: flex;
+  }
+  
+  .frameSortRatings {
+    justify-content: space-between;
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    padding: 0px;
+    width: 283.67px;
+    height: 42px;
+  }
+
+  .sortResetFilters {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 0px;
+    width: 81px;
+    height: 42px;
+    display: flex;
+  }
+
+  .resetFiltersButton {
+    width: 81px;
+    height: 20px;
+    font-family: 'Inter-Regular';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 20px;
+    display: flex;
+    align-items: center;
+    color: var(--main500);
+    margin: 0px;
+    padding: 0px;
+    text-decoration: none;
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    transition: all 150ms ease;
+  }
+  
+  .resetFiltersButton:hover {
+    color: var(--main400);
+  }
+  
+  .resetFiltersButton:active {
+    color: var(--main600);
+  }
+  
+  .resetFiltersButton:disabled {
+    color: var(--grey600);
+    cursor: default;
+  }
+
+  .sortBy {
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: flex-start;
+    padding: 0px;
+    width: 284px;
+    height: 72px;
+    display: flex;
+    position: relative;
+    margin-top: 8px;
+    margin-bottom: 24px;
+  }

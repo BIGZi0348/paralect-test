@@ -1,0 +1,39 @@
+.div {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  width: 656px;
+  height: 325px;
+  left: calc(50% - (656px / 2));
+  top: calc(50% - (325px / 2));
+}
+
+.box {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  width: 656px;
+  height: 196px;
+}
+
+.box1 {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  width: 401px;
+  height: 81px;
+}
+
+.p {
+  margin: 0%;
+  font-family: 'Inter-SemiBold';
+  font-style: normal;
+  font-weight: 600;
+  font-size: 20px;
+  line-height: 24px;
+  color: var(--black);
+}

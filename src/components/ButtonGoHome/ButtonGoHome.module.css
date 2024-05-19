@@ -1,0 +1,28 @@
+.button {
+    width: 103px;
+    height: 40px;
+    border-radius: 8px;
+    position: relative;
+    background-color: var(--main500);
+    transition: all 150ms ease;
+  }
+
+  .button:hover {
+    background-color: var(--main400);
+    cursor: pointer;
+  }
+
+  .button:active {
+    background-color: var(--main600);
+    transform: none;
+  }
+  
+  .pButton {
+    color: var(--white);
+    font-family: "Inter-SemiBold";
+    font-size: 14px;
+    font-weight: 600;
+    line-height: 19.6px;
+    text-align: center;
+    font-style: normal; 
+  }

@@ -1,0 +1,169 @@
+.userRating {
+    display: flex;
+    width: 43px;
+    height: fit-content;
+    padding: 0px;
+    align-items: center;
+    flex-direction: row-reverse;
+    justify-content: space-between;
+}
+
+.userRatingP {
+    font-family: 'Inter-Regular';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 20px;
+    color: var(--black);
+    margin: 0px;
+    height: fit-content;
+    width: fit-content;
+}
+
+.modalTitle {
+    font-family: 'Inter-Regular';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 140%;
+    color: var(--black);
+    margin: 0px;
+    padding: 0px;
+}
+
+.modalHeader {
+    height: 60px;
+    border-bottom: 1px solid var(--grey200);
+}
+
+.modalCloseButton {
+    height: 16px;
+    min-height: fit-content;
+    width: 16px;
+    min-width: fit-content;
+    justify-content: right;
+    animation: none;
+    transition: all 150ms ease;
+}
+  
+.modalCloseButton:active {
+    transform: none;
+}
+  
+.modalCloseButton:not([data-disabled], :disabled):hover {
+    background-color: transparent;
+}
+  
+.closeButtonIcon {
+    transition: all 150ms ease;
+    stroke: var(--grey500);
+}
+  
+.modalCloseButton:active .closeButtonIcon {
+    stroke: var(--main500);
+}
+  
+.modalCloseButton:not([data-disabled], :disabled):hover:active .closeButtonIcon {
+    stroke: var(--main500);
+}
+  
+.modalCloseButton:not([data-disabled], :disabled):hover .closeButtonIcon {
+    stroke: var(--main400);
+}
+
+.modalContent {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+    align-items: flex-start;
+    width: 100%;
+    height: 132px;
+    background: var(--white);
+}
+
+.ratingRoot {
+    width: 100%;
+    justify-content: space-between;
+}
+
+.modalButtons {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: 0px;
+    justify-content: space-between;
+    width: 187px;
+}
+
+.buttonSave {
+    width: 73px;
+    height: 40px;
+    border-radius: 8px;
+    position: relative;
+    background-color: var(--main500);
+    transition: all 150ms ease;
+}
+  
+.buttonSave:hover {
+    background-color: var(--main400);
+    cursor: pointer;
+}
+  
+.buttonSave:active {
+    background-color: var(--main600);
+    transform: none;
+}
+
+.removeRatingButton {
+    width: 98px;
+    height: 20px;
+    font-family: 'Inter-SemiBold';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 140%;
+    display: flex;
+    align-items: center;
+    color: var(--main500);
+    margin: 0px;
+    padding: 0px;
+    text-decoration: none;
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    transition: all 150ms ease;
+}
+  
+.removeRatingButton:hover {
+    color: var(--main400);
+}
+  
+.removeRatingButton:active {
+    color: var(--main600);
+}
+  
+.removeRatingButton:disabled {
+    color: var(--grey600);
+    cursor: default;
+}
+
+.p1 {
+    color: var(--white);
+    font-family: "Inter-SemiBold";
+    font-size: 14px;
+    font-weight: 600;
+    font-style: normal; 
+    line-height: 19.6px;
+    text-align: center;
+}
+
+.p2 {
+    color: var(--black);
+    font-family: "Inter-Bold";
+    font-weight: 700;
+    font-style: normal; 
+    line-height: 22.4px;
+    text-align: left;
+    font-size: 16px;
+    margin: 0;
+}

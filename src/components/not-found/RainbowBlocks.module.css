@@ -1,0 +1,49 @@
+.div {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  width: 656px;
+  height: 50px;
+  }
+  
+.white {
+  width: 100%;
+  height: 50px;
+  background: #FFFFFF;
+}
+
+.yellow {
+  width: 100%;
+  height: 50px;
+  background: #FBE54D;
+}
+
+.cyan {
+  width: 100%;
+  height: 50px;
+  background: #74FADB;
+}
+
+.green {
+  width: 100%;
+  height: 50px;
+  background: #68DC42;
+}
+
+.pink {
+  width: 100%;
+  height: 50px;
+  background: #E83CF2;
+}
+
+.red {
+  width: 100%;
+  height: 50px;
+  background: #D52D25;
+}
+
+.blue {
+  width: 100%;
+  height: 50px;
+  background: #0732B3;
+}
