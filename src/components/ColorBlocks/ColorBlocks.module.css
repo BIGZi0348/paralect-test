@@ -2,48 +2,48 @@
   display: flex;
   flex-direction: row;
   align-items: flex-start;
-  width: 656px;
-  height: 50px;
+  width: 100%;
+  aspect-ratio: calc(656/50);
   }
   
 .white {
   width: 100%;
-  height: 50px;
+  aspect-ratio: 1.8744;
   background: #FFFFFF;
 }
 
 .yellow {
   width: 100%;
-  height: 50px;
+  aspect-ratio: 1.8744;
   background: #FBE54D;
 }
 
 .cyan {
   width: 100%;
-  height: 50px;
+  aspect-ratio: 1.8744;
   background: #74FADB;
 }
 
 .green {
   width: 100%;
-  height: 50px;
+  aspect-ratio: 1.8744;
   background: #68DC42;
 }
 
 .pink {
   width: 100%;
-  height: 50px;
+  aspect-ratio: 1.8744;
   background: #E83CF2;
 }
 
 .red {
   width: 100%;
-  height: 50px;
+  aspect-ratio: 1.8744;
   background: #D52D25;
 }
 
 .blue {
   width: 100%;
-  height: 50px;
+  aspect-ratio: 1.8744;
   background: #0732B3;
 }

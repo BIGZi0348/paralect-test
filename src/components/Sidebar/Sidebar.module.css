@@ -1,9 +1,34 @@
-.nav{
+@media (min-width: 1366px) {
+    .nav {
+        width: 280px;
+    }
+
+    .link {
+        width: 232px;
+    }
+  }
+  
+  @media (max-width: 1366px) {
+    .nav {
+        width: 228px;
+    }
+
+    .link {
+        width: 180px;
+    }
+  }
+
+  @media (max-width: 740px) {
+    .link {
+        width: 100%;
+    }
+  }
+
+  .nav{
     flex-direction: column;
     align-items: flex-start;
     padding: 24px;
     position: sticky;
-    width: 280px;
     height: 100%;
     top: 0px;
     background: var(--main100);
@@ -18,7 +43,7 @@
     justify-content: space-between;
     align-items: flex-start;
     padding: 0px;
-    width: 232px;
+    width: fit-content;
     height: 100px;
     display: flex;
 }
@@ -28,7 +53,6 @@
     flex-direction: row;
     align-items: flex-start;
     padding: 10px;
-    width: 232px;
     height: 42px;
     background: var(--main100);
     border-radius: 8px;
@@ -55,3 +79,33 @@
     font-weight: 700;
     font-style: normal; 
   }
+
+
+  .navMobile{
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 24px;
+    position: sticky;
+    height: 80px;
+    width: 100%;
+    top: 0px;
+    background: var(--main100);
+    display: flex;
+    z-index: 201;
+}
+
+.modalContent {
+    background: var(--main100);
+    padding: 5%;
+    display: flex;
+    width: fit-content;
+    justify-content: center;
+    align-items: center;
+}
+
+.modalBody {
+    display: flex;
+    flex-direction: column;
+    gap: 42px;
+    width: 100%;
+}

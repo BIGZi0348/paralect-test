@@ -5,8 +5,13 @@ import styles from "./Sidebar.module.css";
 import React, { useEffect, useState } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
+import { useMediaQuery } from "@mantine/hooks";
+import { Burger, Modal } from "@mantine/core";
+import { useDisclosure } from "@mantine/hooks";
 
 export default function Sidebar() {
+  const [opened, { toggle }] = useDisclosure(false);
+  const isMobile = useMediaQuery("(max-width: 740px)");
   const pathname = usePathname();
   const initPage = () => {
     let result = 0;
@@ -37,6 +42,7 @@ export default function Sidebar() {
       href={link.href}
       onClick={() => {
         setActiveLink(link.id);
+        toggle();
       }}
       key={link.id}
     >
@@ -50,9 +56,42 @@ export default function Sidebar() {
   }, [pathname]);
 
   return (
-    <nav className={styles.nav}>
-      <AFLogo />
-      <div className={styles.box}>{links}</div>
-    </nav>
+    <>
+      <div id="scrollerToTop" />
+      {isMobile ? (
+        <>
+          <nav className={styles.navMobile}>
+            <AFLogo />
+            <Burger
+              opened={opened}
+              onClick={toggle}
+              aria-label="Toggle navigation"
+            />
+          </nav>
+          <Modal
+            classNames={{
+              content: styles.modalContent,
+              body: styles.modalBody,
+            }}
+            withCloseButton={false}
+            opened={opened}
+            onClose={toggle}
+            fullScreen
+            radius={0}
+            transitionProps={{ transition: "scale-y", duration: 250 }}
+            overlayProps={{
+              backgroundOpacity: 0,
+            }}
+          >
+            {links}
+          </Modal>
+        </>
+      ) : (
+        <nav className={styles.nav}>
+          <AFLogo />
+          <div className={styles.box}>{links}</div>
+        </nav>
+      )}
+    </>
   );
 }

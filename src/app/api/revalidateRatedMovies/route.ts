@@ -9,8 +9,9 @@ export async function POST(request: NextRequest) {
   try {
     const body = await request.json();
     const validation = schemaForValidation.safeParse(body);
-    if (!validation.success)
+    if (!validation.success) {
       return NextResponse.json({ error: "Bad input" }, { status: 400 });
+    }
     let data: any[] = [];
     for (let index = 0; index < body.length; index++) {
       const res = await fetch(

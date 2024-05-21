@@ -96,6 +96,7 @@ export default function UserRating({ prop }: any) {
         opened={opened}
         onClose={onClose}
         title="Your rating"
+        zIndex={300}
         closeButtonProps={{
           icon: <IconClose className={styles.closeButtonIcon} />,
         }}

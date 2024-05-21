@@ -1,6 +1,6 @@
-import styles from "./RainbowBlocks.module.css";
+import styles from "./ColorBlocks.module.css";
 
-export default function RainbowBlocks() {
+export default function ColorBlocks() {
   return (
     <div className={styles.div}>
       <div className={styles.white}></div>

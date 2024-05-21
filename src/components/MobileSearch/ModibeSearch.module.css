@@ -1,0 +1,92 @@
+.button {
+    border-radius: 8px;
+    position: relative;
+    background-color: var(--main500);
+    transition: all 150ms ease;
+    justify-self: center;
+    display: flex;
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+
+  .button:hover {
+    background-color: var(--main400);
+    cursor: pointer;
+  }
+
+  .button:active {
+    background-color: var(--main600);
+    transform: none;
+  }
+  
+  .pButton {
+    color: var(--white);
+    font-family: "Inter-SemiBold";
+    font-size: 14px;
+    font-weight: 600;
+    line-height: 19.6px;
+    text-align: center;
+    font-style: normal; 
+  }
+
+  .modalTitle {
+    font-family: 'Inter-Regular';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 140%;
+    color: var(--black);
+    margin: 0px;
+    padding: 0px;
+}
+
+.modalContent {
+    background: var(--main100);
+    padding: 5%;
+}
+
+.modalHeader {
+    height: 60px;
+    border-bottom: 1px solid var(--grey200);
+    background: var(--main100);
+}
+
+.modalBody{
+    position: relative;
+    top: 20%;
+}
+
+.modalCloseButton {
+    height: 16px;
+    min-height: fit-content;
+    width: 16px;
+    min-width: fit-content;
+    justify-content: right;
+    animation: none;
+    transition: all 150ms ease;
+}
+  
+.modalCloseButton:active {
+    transform: none;
+}
+  
+.modalCloseButton:not([data-disabled], :disabled):hover {
+    background-color: transparent;
+}
+  
+.closeButtonIcon {
+    transition: all 150ms ease;
+    stroke: var(--grey500);
+}
+  
+.modalCloseButton:active .closeButtonIcon {
+    stroke: var(--main500);
+}
+  
+.modalCloseButton:not([data-disabled], :disabled):hover:active .closeButtonIcon {
+    stroke: var(--main500);
+}
+  
+.modalCloseButton:not([data-disabled], :disabled):hover .closeButtonIcon {
+    stroke: var(--main400);
+}

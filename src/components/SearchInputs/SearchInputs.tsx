@@ -6,8 +6,10 @@ import { useQueryState } from "nuqs";
 import ScrollableInputFieldMultiselect from "../ScrollableInputFieldMultiselect/ScrollableInputFieldMultiselect";
 import ScrollableInputField from "../ScrollableInputField/ScrollableInputField";
 import NumberInputField from "../NumberInputField/NumberInputField";
+import { useMediaQuery } from "@mantine/hooks";
 
 export default function SearchInputs({ genres, reFetchData }: any) {
+  const isMobile = useMediaQuery("(max-width: 1250px)");
   const [valueRatingFrom, setValueRatingFrom] =
     useQueryState("vote_average_gte");
   const [valueRatingTo, setValueRatingTo] = useQueryState("vote_average_lte");
@@ -57,7 +59,7 @@ export default function SearchInputs({ genres, reFetchData }: any) {
 
   return (
     <>
-      <div className={styles.divBottom}>
+      <div className={styles.div}>
         <div className={styles.sortGenres}>
           <p className={styles.p}>{"Genres"}</p>
           {
@@ -84,63 +86,115 @@ export default function SearchInputs({ genres, reFetchData }: any) {
             }}
           />
         </div>
-        <div className={styles.sortRatings}>
-          <p className={styles.p}>{"Ratings"}</p>
-          <div className={styles.frameSortRatings}>
-            <NumberInputField
-              placeholder={"From"}
-              maxV={valueRatingTo}
-              value={valueRatingFrom}
-              setValue={setValueRatingFrom}
+        {isMobile ? (
+          <></>
+        ) : (
+          <div className={styles.sortRatings}>
+            <p className={styles.p}>{"Ratings"}</p>
+            <div className={styles.frameSortRatings}>
+              <NumberInputField
+                placeholder={"From"}
+                maxV={valueRatingTo}
+                value={valueRatingFrom}
+                setValue={setValueRatingFrom}
+                onChange={() => {
+                  setPage(null);
+                }}
+              />
+              <NumberInputField
+                placeholder={"To"}
+                minV={valueRatingFrom}
+                value={valueRatingTo}
+                setValue={setValueRatingTo}
+                onChange={() => {
+                  setPage(null);
+                }}
+              />
+            </div>
+          </div>
+        )}
+        {isMobile ? (
+          <></>
+        ) : (
+          <div className={styles.sortResetFilters}>
+            <button
+              onClick={onClickResetFilters}
+              className={styles.resetFiltersButton}
+              disabled={isResetFiltersButtonDisabled}
+            >
+              {"Reset filters"}
+            </button>
+          </div>
+        )}
+      </div>
+      <div className={styles.spaget}>
+        {isMobile ? (
+          <div className={styles.sortRatings}>
+            <p className={styles.p}>{"Ratings"}</p>
+            <div className={styles.frameSortRatings}>
+              <NumberInputField
+                placeholder={"From"}
+                maxV={valueRatingTo}
+                value={valueRatingFrom}
+                setValue={setValueRatingFrom}
+                onChange={() => {
+                  setPage(null);
+                }}
+              />
+              <NumberInputField
+                placeholder={"To"}
+                minV={valueRatingFrom}
+                value={valueRatingTo}
+                setValue={setValueRatingTo}
+                onChange={() => {
+                  setPage(null);
+                }}
+              />
+            </div>
+          </div>
+        ) : (
+          <></>
+        )}
+        <div className={styles.anotherSpaget}>
+          <div className={styles.sortBy}>
+            <p className={styles.p}>{"Sort by"}</p>
+            <ScrollableInputField
+              value={sortBy}
+              setValue={setSortBy}
+              defaultValue={"Most Popular"}
               onChange={() => {
                 setPage(null);
               }}
-            />
-            <NumberInputField
-              placeholder={"To"}
-              minV={valueRatingFrom}
-              value={valueRatingTo}
-              setValue={setValueRatingTo}
-              onChange={() => {
-                setPage(null);
-              }}
+              data={[
+                { label: "Most Popular", value: "popularity.desc" },
+                { label: "Least Popular", value: "popularity.asc" },
+                { label: "Most Rated", value: "vote_average.desc" },
+                { label: "Least Rated", value: "vote_average.asc" },
+                { label: "Most Voted", value: "vote_count.desc" },
+                { label: "Least Voted", value: "vote_count.asc" },
+                { label: "Most Profitable", value: "revenue.desc" },
+                { label: "Least Profitable", value: "revenue.asc" },
+                { label: "A-Z", value: "original_title.desc" },
+                { label: "Z-A", value: "original_title.asc" },
+                { label: "Oldest", value: "primary_release_date.asc" },
+                { label: "Newest", value: "primary_release_date.desc" },
+              ]}
             />
           </div>
+          {isMobile ? (
+            <div className={styles.sortResetFilters}>
+              <button
+                onClick={onClickResetFilters}
+                className={styles.resetFiltersButton}
+                disabled={isResetFiltersButtonDisabled}
+              >
+                {"Reset filters"}
+              </button>
+            </div>
+          ) : (
+            <></>
+          )}
         </div>
-        <div className={styles.sortResetFilters}>
-          <button
-            onClick={onClickResetFilters}
-            className={styles.resetFiltersButton}
-            disabled={isResetFiltersButtonDisabled}
-          >
-            {"Reset filters"}
-          </button>
-        </div>
-      </div>
-      <div className={styles.sortBy}>
-        <p className={styles.p}>{"Sort by"}</p>
-        <ScrollableInputField
-          value={sortBy}
-          setValue={setSortBy}
-          defaultValue={"Most Popular"}
-          onChange={() => {
-            setPage(null);
-          }}
-          data={[
-            { label: "Most Popular", value: "popularity.desc" },
-            { label: "Least Popular", value: "popularity.asc" },
-            { label: "Most Rated", value: "vote_average.desc" },
-            { label: "Least Rated", value: "vote_average.asc" },
-            { label: "Most Voted", value: "vote_count.desc" },
-            { label: "Least Voted", value: "vote_count.asc" },
-            { label: "Most Profitable", value: "revenue.desc" },
-            { label: "Least Profitable", value: "revenue.asc" },
-            { label: "A-Z", value: "original_title.desc" },
-            { label: "Z-A", value: "original_title.asc" },
-            { label: "Oldest", value: "primary_release_date.asc" },
-            { label: "Newest", value: "primary_release_date.desc" },
-          ]}
-        />
       </div>
     </>
   );

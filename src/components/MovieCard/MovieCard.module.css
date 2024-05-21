@@ -1,11 +1,34 @@
+@media (min-width: 560px) {
+    .movieCard{
+        height: 218px;
+    }
+    .name {
+        font-size: 20px;
+    }
+    .date, .ratingStar, .ratingCount, .genres, .genresData{
+        font-size: 16px;
+    }
+  }
+
+@media (max-width: 560px) {
+    .movieCard{
+        height: fit-content;
+    }
+    .name {
+        font-size: 18px;
+    }
+    .date, .ratingStar, .ratingCount, .genres, .genresData{
+        font-size: 14px;
+    }
+  }
+
 .movieCard {
+    width: 100%;
     flex-direction: row;
     justify-content: space-between;
     align-items: flex-start;
     padding: 24px;
     position: relative;
-    width: 482px;
-    height: 218px;
     background: var(--white);
     border-radius: 12px;
     display: flex;
@@ -17,7 +40,7 @@
     align-items: flex-start;
     padding: 0px;
     width: fit-content;
-    height: 170px;
+    height: 100%;
     display: flex;
 }
 
@@ -29,18 +52,18 @@
   }
 
 .image {
+    height: 100%;
+    aspect-ratio: 0.7;
     position: relative;
-    width: 119px;
-    height: 170px;
     background: var(--grey200);
     border: 1px solid var(--grey100);
     box-sizing: border-box;
 }
 
 .loaderBackgrond {
-    position: relative;
-    width: 117px;
     height: 168px;
+    aspect-ratio: 0.7;
+    position: relative;
     background: var(--grey200);
     box-sizing: border-box;
     z-index: 8;
@@ -72,12 +95,12 @@
 }
 
 .movieDescription {
+    height: 100%;
+    width: fit-content;
     flex-direction: column;
     justify-content: space-between;
     align-items: flex-start;
     padding: 0px;
-    width: 275px;
-    height: 170px;
     display: flex;
     padding-left: 16px;
 }
@@ -100,11 +123,11 @@
     font-style: normal;
     font-weight: 600;
     margin: 0;
-    font-size: 20px;
     line-height: 24px;
     color: var(--main500);
     width: 100%;
     transition: all 150ms ease;
+    padding-right: 10px;
 }
 
 .name:hover {
@@ -122,7 +145,6 @@
     font-weight: 400;
     margin-top: 8px;
     margin-bottom: 8px;
-    font-size: 16px;
     line-height: 20px;
     color: var(--grey600);
     width: fit-content;
@@ -133,8 +155,9 @@
     justify-content: space-between;
     align-items: center;
     padding: 0px;
-    width: 115px;
-    height: 28px;
+    width: fit-content;
+    height: fit-content;
+    gap: 4px;
     display: flex;
 }
 
@@ -143,8 +166,9 @@
     flex-direction: row;
     align-items: center;
     padding: 0px;
-    width: 57px;
-    height: 28px;
+    width: fit-content;
+    height: fit-content;
+    gap: 4px;
     display: flex;
 }
 
@@ -153,7 +177,6 @@
     font-family: 'Inter-Regular';
     font-style: normal;
     font-weight: 600;
-    font-size: 16px;
     line-height: 20px;
     color: var(--black);
     width: 25px;
@@ -165,11 +188,10 @@
     font-family: 'Inter-Regular';
     font-style: normal;
     font-weight: 400;
-    font-size: 16px;
     line-height: 19px;
     margin: 0;
     color: var(--grey600);
-    width: 50px;
+    width: fit-content;
 }
 
 .genresFrame {
@@ -177,9 +199,10 @@
     justify-content: left;
     align-items: flex-start;
     padding: 0px;
-    width: 115%;
     height: fit-content;
     display: flex;
+    width: fit-content;
+    gap: 8px;
 }
 
 .genres {
@@ -187,11 +210,10 @@
     font-family: 'Inter-Regular';
     font-style: normal;
     font-weight: 400;
-    font-size: 16px;
     line-height: 19px;
     margin: 0;
     color: var(--grey600);
-    width: 54px;
+    width: fit-content;
 }
 
 .genresData {
@@ -199,11 +221,39 @@
     font-family: 'Inter-Regular';
     font-style: normal;
     font-weight: 400;
-    font-size: 16px;
     line-height: 20px;
     text-align: left;
     margin: 0;
-    margin-left: 8px;
     color: var(--black);
     width: fit-content;
+}
+
+.frameMobile {
+    flex-direction: column;
+    justify-content: left;
+    align-items: flex-start;
+    padding: 0px;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    gap: 10px;
+}
+
+.topMobile{
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    height: fit-content;
+}
+
+.bottomMobile{
+    display: flex;
+    gap: 10px;
+}
+
+.movieDescriptionMobile {
+    display: flex;
+    height: fit-content;
+    flex-direction: column;
+    gap: 8px;
 }

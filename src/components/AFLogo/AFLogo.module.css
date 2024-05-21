@@ -3,7 +3,7 @@
     flex-direction: row;
     padding: 0px;
     position: sticky;
-    width: 232px;
+    width: fit-content;
     height: fit-content;
     left: 24px;
     top: 24px;
@@ -14,7 +14,6 @@
     color: var(--main500);
     font-size: 24px;
     line-height: 36px;
-    letter-spacing: -2%;
     font-weight: 600;
     font-family: "poppins";
     text-decoration: none;

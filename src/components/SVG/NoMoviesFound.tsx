@@ -1,12 +1,6 @@
 export default function NoMoviesFound() {
   return (
-    <svg
-      width="311"
-      height="253"
-      viewBox="0 0 311 253"
-      fill="none"
-      xmlns="http://www.w3.org/2000/svg"
-    >
+    <svg viewBox="0 0 311 253" fill="none" xmlns="http://www.w3.org/2000/svg">
       <mask
         id="mask0_18128_818"
         maskUnits="userSpaceOnUse"

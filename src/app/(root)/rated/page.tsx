@@ -6,7 +6,7 @@ import RatedMoviesPage from "./RatedMoviesPage";
 export async function generateMetadata(): Promise<Metadata> {
   return {
     title: "Rated movies",
-    description: "Do or do not. There is no try",
+    description: "How can you rate movies without watching them?",
   };
 }
 

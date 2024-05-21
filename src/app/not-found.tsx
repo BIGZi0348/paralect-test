@@ -1,7 +1,7 @@
 "use server";
 
 import styles from "./not-found.module.css";
-import RainbowBlocks from "@/components/not-found/RainbowBlocks";
+import ColorBlocks from "@/components/ColorBlocks/ColorBlocks";
 import ButtonGoHome from "@/components/ButtonGoHome/ButtonGoHome";
 import PageNotFound from "@/components/SVG/PageNotFound";
 import { Metadata } from "next";
@@ -17,9 +17,9 @@ export default async function Custom404() {
   return (
     <div className={styles.div}>
       <div className={styles.box}>
-        <RainbowBlocks />
-        <PageNotFound />
-        <RainbowBlocks />
+        <ColorBlocks />
+        <PageNotFound className={styles.boxSVG} />
+        <ColorBlocks />
       </div>
       <div className={styles.box1}>
         <p className={styles.p}>

@@ -1,7 +1,20 @@
+@media (min-width: 560px) {
+    .userRatingP {
+        font-size: 16px;
+    }
+}
+
+@media (max-width: 560px) {
+    .userRatingP {
+        font-size: 14px;
+    }
+}
+
 .userRating {
     display: flex;
-    width: 43px;
+    width: fit-content;
     height: fit-content;
+    gap: 4px;
     padding: 0px;
     align-items: center;
     flex-direction: row-reverse;
@@ -12,7 +25,6 @@
     font-family: 'Inter-Regular';
     font-style: normal;
     font-weight: 600;
-    font-size: 16px;
     line-height: 20px;
     color: var(--black);
     margin: 0px;
@@ -73,12 +85,13 @@
 
 .modalContent {
     display: flex;
-    justify-content: space-between;
     flex-direction: column;
     align-items: flex-start;
     width: 100%;
-    height: 132px;
+    min-height: 132px;
+    height: fit-content;
     background: var(--white);
+    gap: 16px;
 }
 
 .ratingRoot {

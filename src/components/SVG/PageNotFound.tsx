@@ -1,6 +1,7 @@
-export default function PageNotFound() {
+export default function PageNotFound({ className }: any) {
   return (
     <svg
+      className={className}
       width="542"
       height="41"
       viewBox="0 0 542 41"

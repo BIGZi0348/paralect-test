@@ -3,15 +3,14 @@
 import MoviePage from "./MoviePage";
 import { Metadata } from "next";
 import { notFound } from "next/navigation";
+import { z } from "zod";
+
+const schemaForValidation = z.number().int().nonnegative().max(10000000);
 
 const getData = async (movieId: string) => {
   try {
-    const movieIdNumber = parseInt(movieId);
-
-    if (movieIdNumber === null) {
-      return null;
-    }
-
+    // if validation fails - throws an error
+    const movieIdNumber = schemaForValidation.parse(parseInt(movieId));
     const res = await fetch(
       "https://api.themoviedb.org/3/movie/" +
         movieIdNumber +
@@ -31,7 +30,6 @@ const getData = async (movieId: string) => {
     }
     return data;
   } catch (error: any) {
-    console.error(error);
     return null;
   }
 };

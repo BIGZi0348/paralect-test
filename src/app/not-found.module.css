@@ -1,13 +1,34 @@
+@media (min-width: 700px) {
+  .div {
+    width: 656px;
+    left: calc(50% - (656px / 2));
+    top: calc(50% - (325px / 2));
+    height: 325px;
+  }
+  .boxSVG {
+    width: 542px;
+  }
+}
+
+@media (max-width: 700px) {
+.div {
+  width: 90%;
+  left: calc(50% - (90% / 2));
+  top: calc(50% - (40% / 2));
+  aspect-ratio: calc(656 / 325);
+}
+.boxSVG {
+  width: calc(100% * 0.8262);
+}
+}
+
 .div {
   position: absolute;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
-  width: 656px;
-  height: 325px;
-  left: calc(50% - (656px / 2));
-  top: calc(50% - (325px / 2));
+  gap: 48px;
 }
 
 .box {
@@ -15,8 +36,12 @@
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
-  width: 656px;
-  height: 196px;
+  width: 100%;
+  aspect-ratio: calc(656/196);
+}
+
+.boxSVG {
+  aspect-ratio: calc(542/41);
 }
 
 .box1 {
@@ -24,8 +49,9 @@
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
-  width: 401px;
-  height: 81px;
+  width: 100%;
+  height: fit-content;
+  gap: 16px;
 }
 
 .p {
@@ -36,4 +62,5 @@
   font-size: 20px;
   line-height: 24px;
   color: var(--black);
+  text-align: center;
 }

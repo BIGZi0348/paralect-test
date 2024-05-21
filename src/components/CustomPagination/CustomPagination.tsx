@@ -27,9 +27,8 @@ export default function CustomPagination({
   // may God have mercy on my soul
 
   const scrollOnTop = () => {
-    const element = document.getElementById("top");
-    element!.scrollIntoView({
-      block: "end",
+    document.querySelector("#scrollerToTop")!.scrollIntoView({
+      behavior: "smooth",
     });
   };
 
@@ -218,11 +217,9 @@ export default function CustomPagination({
   //       onChange={(value) => {
   //         setPage(value.toString());
   //         onChange();
-  // const element = document.getElementById("top");
-  // element!.scrollIntoView({
-  //   block: "end",
-  //   behavior: "smooth",
-  // });
+  //         document.querySelector("#scrollerToTop")!.scrollIntoView({
+  //           behavior: "smooth",
+  //         });
   //       }}
   //       classNames={{ control: styles.control }}
   //     />

@@ -39,9 +39,9 @@ export default function HomePage({ genres }: any) {
     key: "indexStorage",
     defaultValue: [],
   });
-  const [isServer, setIsClient] = useState(true);
+  const [isServer, setIsServer] = useState(true);
   useEffect(() => {
-    setIsClient(false);
+    setIsServer(false);
   }, []);
   const [page, setPage] = useState(1);
   const [value, setValue] = useState("");

@@ -10,7 +10,7 @@ export default function NumberInputField({
   maxV,
   onChange,
 }: any) {
-  const [tempValue, setTempValue] = useState(value);
+  const [tempValue, setTempValue] = useState<any>();
 
   useEffect(() => {
     if (value === null) {
