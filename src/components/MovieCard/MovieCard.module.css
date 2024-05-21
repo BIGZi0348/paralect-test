@@ -1,24 +1,31 @@
-@media (min-width: 560px) {
-    .movieCard{
-        height: 218px;
+
+@media (max-width: 400px) {
+    .name {
+        font-size: 18px;
     }
+    .ratingStar, .ratingCount, .genres, .genresData{
+        font-size: 14px;
+    }
+  }
+
+@media (min-width: 400px) {
     .name {
         font-size: 20px;
     }
-    .date, .ratingStar, .ratingCount, .genres, .genresData{
+    .ratingStar, .ratingCount, .genres, .genresData{
         font-size: 16px;
+    }
+  }
+
+@media (min-width: 560px) {
+    .movieCard{
+        height: 218px;
     }
   }
 
 @media (max-width: 560px) {
     .movieCard{
         height: fit-content;
-    }
-    .name {
-        font-size: 18px;
-    }
-    .date, .ratingStar, .ratingCount, .genres, .genresData{
-        font-size: 14px;
     }
   }
 
@@ -143,6 +150,7 @@
     font-family: 'Inter-Regular';
     font-style: normal;
     font-weight: 400;
+    font-size: 16px;
     margin-top: 8px;
     margin-bottom: 8px;
     line-height: 20px;

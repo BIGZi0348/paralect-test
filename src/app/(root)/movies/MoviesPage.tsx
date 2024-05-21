@@ -9,7 +9,7 @@ import PaginationMovies from "@/components/PaginationMovies/PaginationMovies";
 import { Container, Grid, Loader } from "@mantine/core";
 import MovieCard from "@/components/MovieCard/MovieCard";
 import { useMediaQuery } from "@mantine/hooks";
-import MobileSearch from "@/components/MobileSearch/ModibeSearch";
+import MobileSearchButton from "@/components/MobileSearchButton/MobileSearchButton";
 
 export default function MoviesPage({ data, genres }: any) {
   const [isServer, setIsServer] = useState(true);
@@ -46,7 +46,10 @@ export default function MoviesPage({ data, genres }: any) {
               {isMobile ? (
                 <div className={styles.frame1}>
                   <p className={styles.p}>{"Movies"}</p>
-                  <MobileSearch reFetchData={reFetchData} genres={genres} />
+                  <MobileSearchButton
+                    reFetchData={reFetchData}
+                    genres={genres}
+                  />
                 </div>
               ) : (
                 <SearchInputs reFetchData={reFetchData} genres={genres} />

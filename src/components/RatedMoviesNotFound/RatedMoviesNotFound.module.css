@@ -1,3 +1,17 @@
+@media (min-width: 410px) {
+  .noRatedMovies{
+    width: 400px;
+    height: 300px;
+  }
+}
+
+@media (max-width: 410px) {
+  .noRatedMovies{
+    width: 100%;
+    aspect-ratio: 4/3;
+  }
+}
+
 .div {
     display: flex;
     flex-direction: column;
@@ -5,7 +19,8 @@
     align-items: center;
     padding: 0px;
     width: fit-content;
-    height: 397px;
+    height: fit-content;
+    gap: 16px;
 }
 
 .frame {
@@ -15,11 +30,13 @@
     padding: 0px;
     justify-content: space-between;
     width: fit-content;
-    height: 81px;
+    height: fit-content;
+    gap: 16px;
 }
 
 .p {
     font-family: 'Inter-SemiBold';
+    text-align: center;
     font-style: normal;
     font-weight: 600;
     font-size: 20px;

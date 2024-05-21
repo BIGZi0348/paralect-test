@@ -109,25 +109,6 @@
   font-style: normal; 
 }
 
-.buttonSearch {
-  width: 88px;
-  height: 32px;
-  border-radius: 8px;
-  position: relative;
-  background-color: var(--main500);
-  transition: all 150ms ease;
-}
-
-.buttonSearch:hover {
-  background-color: var(--main400);
-  cursor: pointer;
-}
-
-.buttonSearch:active {
-  background-color: var(--main600);
-  transform: none;
-}
-
 .p1 {
   color: var(--white);
   font-family: "Inter-SemiBold";

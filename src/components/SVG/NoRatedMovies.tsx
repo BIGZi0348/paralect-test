@@ -1,6 +1,7 @@
-export default function NoRatedMovies() {
+export default function NoRatedMovies({ className }: any) {
   return (
     <svg
+      className={className}
       width="400"
       height="300"
       viewBox="0 0 400 300"

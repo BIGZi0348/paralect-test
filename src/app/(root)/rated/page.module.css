@@ -1,30 +1,112 @@
+@media (min-width: 1700px) {
+  .test{
+    left: calc((100% - 980px) / 2);
+  }
+}
+
+@media (max-width: 1700px) {
+  .test{
+    left: calc(280px + (100% - 980px - 280px) / 2);
+  }
+}
+
+@media (min-width: 1366px) {
+  .ratedMoviesNotFound {
+    left: calc(50% + 140px - (397px / 2));
+  }
+}
+
+@media (max-width: 1366px) {
+  .test{
+    left: calc(228px + (100% - 980px - 228px) / 2);
+  }
+  .ratedMoviesNotFound {
+    left: calc(50% + 114px - (397px / 2));
+  }
+}
+
+@media (min-width: 1250px) {
+  .test{
+    width: 980px;
+  }
+}
+
+@media (max-width: 1250px) {
+  .test{
+    width: calc(75% - 228px);
+    left: calc(228px + (100% - 228px - (75% - 228px)) / 2);
+  }
+}
+
+@media (max-width: 990px) {
+  .test{
+    width: 500px;
+    left: calc(228px + (100% - 228px - 500px) / 2);
+  }
+}
+
+@media (max-width: 800px) {
+  .test{
+    width: 63.75%;
+    left: calc(228px + (100% - 228px - 63.75%) / 2);
+  }
+}
+
+@media (min-width: 740px) {
+  .test{
+    top: 40px;
+  }
+}
+
+@media (max-width: 740px) {
+  .test{
+    width: 500px;
+    top: 120px;
+    left: calc((100% - 500px) / 2);
+  }
+  .ratedMoviesNotFound {
+    left: calc(50% - (397px / 2));
+  }
+}
+
+@media (max-width: 560px) {
+  .test{
+    width: 88%;
+    left: calc(12% / 2);
+  }
+}
+
+@media (max-width: 410px) {
+  .ratedMoviesNotFound {
+    left: 0;
+  }
+}
+
 .test{
   flex-direction: column;
   position: absolute;
-  left: 370px;
-  top: 40px;
   display: flex;
-  width: 1070px;
   padding-bottom: 82px;
 }
 
 .frame1 {
-  flex-direction: column;
-  align-items: flex-start;
-  padding: 0px;
-  position: relative;
-  display: flex;
-  width: 980px;
-}
-
-.frame2RatedMovies {
-  margin-top: 40px;
-  flex-direction: column;
   align-items: center;
   padding: 0px;
   position: relative;
   display: flex;
-  width: 980px;
+  width: 100%;
+  flex-direction: row;
+  justify-content: space-between;
+  margin-bottom: 40px;
+}
+
+.frame2RatedMovies {
+  flex-direction: column;
+  align-items: flex-end;
+  padding: 0px;
+  position: relative;
+  display: flex;
+  width: fit-content;
 }
 
 .divTop {
@@ -38,14 +120,14 @@
 
 .movies{
   padding: 0px;
-  width: 980px;
+  width: fit-content;
   display: flex;
   position: relative;
   margin-bottom: 16px;
 }
 
 .p {
-  margin: 0;
+  margin: 0px;
   font-family: "Inter-Regular";
   font-weight: 700;
   line-height: 44.8px;
@@ -105,12 +187,11 @@
 .ratedMoviesNotFound {
   position: absolute;
   top: calc(50% - (400px / 2));
-  left: calc(50% + 140px - (397px / 2));
 }
 
 .loader {
   position: absolute;
   top: calc(50% - 18px);
-  left: calc(50% + 140px - 18px);
+  left: calc(50% - 18px);
   z-index: 8;
 }

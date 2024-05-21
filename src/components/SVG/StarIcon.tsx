@@ -1,6 +1,8 @@
+"use client";
+
 import { useMediaQuery } from "@mantine/hooks";
 
-export default function StarIcon({ color, size }: any) {
+export default function StarIcon({ color }: any) {
   const isMobile = useMediaQuery("(max-width: 560px)");
   let width = 26;
   let height = 25;

@@ -9,7 +9,7 @@ import NumberInputField from "../NumberInputField/NumberInputField";
 import { useMediaQuery } from "@mantine/hooks";
 
 export default function SearchInputs({ genres, reFetchData }: any) {
-  const isMobile = useMediaQuery("(max-width: 1250px)");
+  const isTablet = useMediaQuery("(max-width: 1250px)");
   const [valueRatingFrom, setValueRatingFrom] =
     useQueryState("vote_average_gte");
   const [valueRatingTo, setValueRatingTo] = useQueryState("vote_average_lte");
@@ -86,7 +86,7 @@ export default function SearchInputs({ genres, reFetchData }: any) {
             }}
           />
         </div>
-        {isMobile ? (
+        {isTablet ? (
           <></>
         ) : (
           <div className={styles.sortRatings}>
@@ -113,7 +113,7 @@ export default function SearchInputs({ genres, reFetchData }: any) {
             </div>
           </div>
         )}
-        {isMobile ? (
+        {isTablet ? (
           <></>
         ) : (
           <div className={styles.sortResetFilters}>
@@ -128,7 +128,7 @@ export default function SearchInputs({ genres, reFetchData }: any) {
         )}
       </div>
       <div className={styles.spaget}>
-        {isMobile ? (
+        {isTablet ? (
           <div className={styles.sortRatings}>
             <p className={styles.p}>{"Ratings"}</p>
             <div className={styles.frameSortRatings}>
@@ -181,7 +181,7 @@ export default function SearchInputs({ genres, reFetchData }: any) {
               ]}
             />
           </div>
-          {isMobile ? (
+          {isTablet ? (
             <div className={styles.sortResetFilters}>
               <button
                 onClick={onClickResetFilters}

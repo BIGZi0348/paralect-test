@@ -1,11 +1,11 @@
-import styles from "./ModibeSearch.module.css";
+import styles from "./MobileSearchButton.module.css";
 import { useDisclosure } from "@mantine/hooks";
 import { Modal, Button, Space } from "@mantine/core";
-import SearchInputs from "../SearchInputs/SearchInputs";
+import MobileSearchInputs from "../MobileSearchInputs/MobileSearchInputs";
 import IconSearch from "../SVG/IconSearch";
 import IconClose from "../SVG/IconClose";
 
-export default function MobileSearch({ reFetchData, genres }: any) {
+export default function MobileSearchButton({ reFetchData, genres }: any) {
   const [opened, { open, close }] = useDisclosure(false);
 
   return (
@@ -43,7 +43,7 @@ export default function MobileSearch({ reFetchData, genres }: any) {
           backgroundOpacity: 0,
         }}
       >
-        {<SearchInputs reFetchData={reFetchData} genres={genres} />}
+        {<MobileSearchInputs reFetchData={reFetchData} genres={genres} />}
       </Modal>
     </>
   );

@@ -11,6 +11,7 @@ import MoviesNotFound from "@/components/MoviesNotFound/MoviesNotFound";
 import { readLocalStorageValue } from "@mantine/hooks";
 import { useLocalStorage } from "@mantine/hooks";
 import axios from "axios";
+import { useMediaQuery } from "@mantine/hooks";
 
 const chunk = (array: any[], size: number): any[] => {
   if (array.length === 0) {
@@ -43,6 +44,8 @@ export default function HomePage({ genres }: any) {
   useEffect(() => {
     setIsServer(false);
   }, []);
+  const isMediumScreen = useMediaQuery("(max-width: 1250px)");
+  const isMobile = useMediaQuery("(max-width: 740px)");
   const [page, setPage] = useState(1);
   const [value, setValue] = useState("");
   const [searching, setSearching] = useState(false);
@@ -139,7 +142,7 @@ export default function HomePage({ genres }: any) {
       const element = dataSliced[page - 1][index];
       result.push(
         <Grid.Col
-          span={6}
+          span={isMediumScreen ? 12 : 6}
           key={element.id.toString()}
           style={{ overflowAnchor: "none" }}
         >

@@ -8,7 +8,7 @@ import { Button } from "@mantine/core";
 export default function RatedMoviesNotFound() {
   return (
     <div className={styles.div}>
-      <NoRatedMovies />
+      <NoRatedMovies className={styles.noRatedMovies} />
       <div className={styles.frame}>
         <p className={styles.p}>{"You haven't rated any films yet"}</p>
         <Link href={"/movies"}>
