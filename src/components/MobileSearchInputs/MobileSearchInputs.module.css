@@ -64,6 +64,7 @@
     padding: 0px;
     height: 42px;
     gap: 8px;
+    width: 100%;
   }
   
   .sortResetFilters {

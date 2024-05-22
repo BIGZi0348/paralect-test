@@ -11,7 +11,6 @@ import generateGenresString from "@/utils/generateGenresString";
 import { useMediaQuery } from "@mantine/hooks";
 
 export default function MovieCard({ prop, genres, isLoading }: any) {
-  const isTablet = useMediaQuery("(max-width: 800px)");
   const isMobile = useMediaQuery("(max-width: 560px)");
   const [imageLoader, setImageLoader] = useState({ zIndex: "7" });
 
@@ -27,19 +26,13 @@ export default function MovieCard({ prop, genres, isLoading }: any) {
             <>
               <div className={styles.frameMobile}>
                 <div className={styles.topMobile}>
-                  <Link
-                    href={"/movies/" + prop.id}
-                    style={{ textDecoration: "none" }}
-                  >
+                  <Link href={"/movies/" + prop.id} className={styles.link}>
                     <p className={styles.name}>{prop.original_title}</p>
                   </Link>
                   <UserRating prop={prop} />
                 </div>
                 <div className={styles.bottomMobile}>
-                  <Link
-                    href={"/movies/" + prop.id}
-                    style={{ textDecoration: "none" }}
-                  >
+                  <Link href={"/movies/" + prop.id} className={styles.link}>
                     <div className={styles.image}>
                       {prop.poster_path ? (
                         <>
@@ -98,10 +91,7 @@ export default function MovieCard({ prop, genres, isLoading }: any) {
           ) : (
             <>
               <div className={styles.frame}>
-                <Link
-                  href={"/movies/" + prop.id}
-                  style={{ textDecoration: "none" }}
-                >
+                <Link href={"/movies/" + prop.id} className={styles.link}>
                   <div className={styles.image}>
                     {prop.poster_path ? (
                       <>
@@ -131,10 +121,7 @@ export default function MovieCard({ prop, genres, isLoading }: any) {
                 </Link>
                 <div className={styles.movieDescription}>
                   <div className={styles.nameDateRating}>
-                    <Link
-                      href={"/movies/" + prop.id}
-                      style={{ textDecoration: "none" }}
-                    >
+                    <Link href={"/movies/" + prop.id} className={styles.link}>
                       <p className={styles.name}>{prop.original_title}</p>
                     </Link>
                     <p className={styles.date}>

@@ -2,7 +2,7 @@
 
 import React, { Suspense, useEffect, useState, useTransition } from "react";
 import { useRouter } from "next/navigation";
-import styles from "./page.module.css";
+import styles from "./MoviesPage.module.css";
 import MoviesNotFound from "@/components/MoviesNotFound/MoviesNotFound";
 import SearchInputs from "@/components/SearchInputs/SearchInputs";
 import PaginationMovies from "@/components/PaginationMovies/PaginationMovies";
@@ -61,7 +61,7 @@ export default function MoviesPage({ data, genres }: any) {
             ) : (
               <>
                 <Container fluid className={styles.movies}>
-                  <Grid>
+                  <Grid classNames={{ root: styles.gridRoot }}>
                     {data.results.map((item: any) => (
                       <Grid.Col
                         span={isMediumScreen ? 12 : 6}

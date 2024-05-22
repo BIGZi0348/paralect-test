@@ -27,6 +27,7 @@ export default function NumberInputField({
   return (
     <NumberInput
       classNames={{
+        root: styles.root,
         input: styles.input,
         section: styles.section,
         controls: styles.controls,

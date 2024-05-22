@@ -1,5 +1,10 @@
+@media (max-width: 740px) {
+  .root {
+    width: 100%;
+  }
+}
+
 .input {
-  width: calc((100% - 8) / 2);
   border-radius: 8px;
   transition: all 150ms ease;
   font-family: 'Inter-Regular';

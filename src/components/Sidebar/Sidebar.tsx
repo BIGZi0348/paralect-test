@@ -10,7 +10,7 @@ import { Burger, Modal } from "@mantine/core";
 import { useDisclosure } from "@mantine/hooks";
 
 export default function Sidebar() {
-  const [opened, { toggle }] = useDisclosure(false);
+  const [opened, { close, toggle }] = useDisclosure(false);
   const isMobile = useMediaQuery("(max-width: 740px)");
   const pathname = usePathname();
   const initPage = () => {
@@ -42,7 +42,7 @@ export default function Sidebar() {
       href={link.href}
       onClick={() => {
         setActiveLink(link.id);
-        toggle();
+        close();
       }}
       key={link.id}
     >
@@ -75,7 +75,7 @@ export default function Sidebar() {
             }}
             withCloseButton={false}
             opened={opened}
-            onClose={toggle}
+            onClose={close}
             fullScreen
             radius={0}
             transitionProps={{ transition: "scale-y", duration: 250 }}

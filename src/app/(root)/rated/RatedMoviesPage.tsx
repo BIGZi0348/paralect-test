@@ -2,7 +2,7 @@
 
 import React, { useState, useEffect } from "react";
 import { TextInput, Button, Grid, Container, Loader } from "@mantine/core";
-import styles from "./page.module.css";
+import styles from "./RatedMoviesPage.module.css";
 import MovieCard from "@/components/MovieCard/MovieCard";
 import IconSearch from "@/components/SVG/IconSearch";
 import PaginationRatedMovies from "@/components/PaginationRatedMovies/PaginationRatedMovies";
@@ -35,7 +35,7 @@ const getData = (indexStorage: any[]) => {
   return data;
 };
 
-export default function HomePage({ genres }: any) {
+export default function RatedMoviesPage({ genres }: any) {
   const [indexStorage, setIndexStorage] = useLocalStorage({
     key: "indexStorage",
     defaultValue: [],
@@ -182,7 +182,10 @@ export default function HomePage({ genres }: any) {
                     <p className={styles.p1}>{"Search"}</p>
                   </Button>
                 }
-                classNames={{ input: styles.TextInputSearch }}
+                classNames={{
+                  root: styles.textInputRoot,
+                  input: styles.textInputSearch,
+                }}
               />
             </div>
           </div>
@@ -191,7 +194,7 @@ export default function HomePage({ genres }: any) {
               <MoviesNotFound />
             ) : (
               <Container fluid className={styles.movies}>
-                <Grid>{items()}</Grid>
+                <Grid classNames={{ root: styles.gridRoot }}>{items()}</Grid>
               </Container>
             )}
             <PaginationRatedMovies
