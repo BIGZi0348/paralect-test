@@ -48,7 +48,7 @@ export default function MovieCard({ prop, genres, isLoading }: any) {
                             alt={prop.original_title}
                             priority={true}
                             fill={true}
-                            sizes="(max-width: 120px) 100vw"
+                            sizes="100vw"
                             style={imageLoader}
                             onLoad={() => {
                               setImageLoader({ zIndex: "10" });
@@ -101,12 +101,13 @@ export default function MovieCard({ prop, genres, isLoading }: any) {
                         <Loader color="#9854F6" className={styles.loader} />
                         <Image
                           src={
-                            "https://image.tmdb.org/t/p/w185" + prop.poster_path
+                            "https://image.tmdb.org/t/p/original" +
+                            prop.poster_path
                           }
                           alt={prop.original_title}
                           priority={true}
                           fill={true}
-                          sizes="(max-width: 120px) 100vw"
+                          sizes="100vw"
                           style={imageLoader}
                           onLoad={() => {
                             setImageLoader({ zIndex: "10" });

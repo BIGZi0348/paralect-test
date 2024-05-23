@@ -47,7 +47,7 @@ export default async function MovieCardBig({ prop }: any) {
                 src={"https://image.tmdb.org/t/p/original" + prop.poster_path}
                 alt={prop.original_title}
                 priority={true}
-                sizes="(max-width: 250px) 100vw"
+                sizes="100vw"
               />
             </>
           ) : (
