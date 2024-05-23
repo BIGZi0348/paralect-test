@@ -42,7 +42,7 @@ export default function MovieCard({ prop, genres, isLoading }: any) {
                           <Loader color="#9854F6" className={styles.loader} />
                           <Image
                             src={
-                              "https://image.tmdb.org/t/p/w185" +
+                              "https://image.tmdb.org/t/p/original" +
                               prop.poster_path
                             }
                             alt={prop.original_title}
