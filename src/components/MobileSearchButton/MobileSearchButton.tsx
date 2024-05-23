@@ -4,6 +4,7 @@ import { Modal, Button, Space } from "@mantine/core";
 import MobileSearchInputs from "../MobileSearchInputs/MobileSearchInputs";
 import IconSearch from "../SVG/IconSearch";
 import IconClose from "../SVG/IconClose";
+import { Suspense } from "react";
 
 export default function MobileSearchButton({ reFetchData, genres }: any) {
   const [opened, { open, close }] = useDisclosure(false);
@@ -43,7 +44,11 @@ export default function MobileSearchButton({ reFetchData, genres }: any) {
           backgroundOpacity: 0,
         }}
       >
-        {<MobileSearchInputs reFetchData={reFetchData} genres={genres} />}
+        {
+          <Suspense>
+            <MobileSearchInputs reFetchData={reFetchData} genres={genres} />
+          </Suspense>
+        }
       </Modal>
     </>
   );

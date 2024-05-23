@@ -10,14 +10,16 @@ import MovieCardBig from "@/components/MovieCardBig/MovieCardBig";
 import YoutubeComponent from "@/components/YoutubeComponent/YoutubeComponent";
 
 export default async function MoviePage({ prop }: any) {
-  const breadcrumbs = [
-    { title: "Movies", href: "/movies" },
-    { title: prop.original_title, href: "/movies/" + prop.id },
-  ].map((item, index) => (
-    <Link href={item.href} key={index} className={styles.link}>
-      {item.title}
-    </Link>
-  ));
+  const breadcrumbs = (
+    <>
+      <Link href={"/movies"} key={0} className={styles.link0}>
+        {"Movies"}
+      </Link>
+      <Link href={"/movies/" + prop.id} key={1} className={styles.link1}>
+        {prop.original_title}
+      </Link>
+    </>
+  );
 
   const getYoutubeVideoURL = () => {
     const result = prop.videos.results.find(
@@ -35,7 +37,9 @@ export default async function MoviePage({ prop }: any) {
 
   return (
     <div className={styles.frame}>
-      <Breadcrumbs>{breadcrumbs}</Breadcrumbs>
+      <Breadcrumbs classNames={{ root: styles.breadcrumbsRoot }}>
+        {breadcrumbs}
+      </Breadcrumbs>
       <MovieCardBig prop={prop} />
       {youtubeVideoURL === null &&
       prop.overview === "" &&
@@ -52,7 +56,10 @@ export default async function MoviePage({ prop }: any) {
                 <div className={styles.youtubeBackground}>
                   <Loader color="#9854F6" className={styles.loader} />
                   <div className={styles.youtubeWrapper}>
-                    <YoutubeComponent youtubeVideoURL={youtubeVideoURL} />
+                    <YoutubeComponent
+                      className={styles.youtube}
+                      youtubeVideoURL={youtubeVideoURL}
+                    />
                   </div>
                 </div>
               </div>

@@ -17,8 +17,6 @@ export default function CustomPagination({
   page,
   setPage,
 }: any) {
-  // sets total pages to 500 if number more then 500 given
-  // and sets it to 0 if it's only 1
   const total = total_pages > 500 ? 500 : total_pages === 1 ? 0 : total_pages;
 
   // mentor told to make pagination 1 to 1 as it showed on figma

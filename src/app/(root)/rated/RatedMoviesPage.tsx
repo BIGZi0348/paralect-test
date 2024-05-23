@@ -13,6 +13,7 @@ import { useLocalStorage } from "@mantine/hooks";
 import axios from "axios";
 import { useMediaQuery } from "@mantine/hooks";
 
+// creates array to paginate
 const chunk = (array: any[], size: number): any[] => {
   if (array.length === 0) {
     return [];
@@ -45,7 +46,6 @@ export default function RatedMoviesPage({ genres }: any) {
     setIsServer(false);
   }, []);
   const isMediumScreen = useMediaQuery("(max-width: 1250px)");
-  const isMobile = useMediaQuery("(max-width: 740px)");
   const [page, setPage] = useState(1);
   const [value, setValue] = useState("");
   const [searching, setSearching] = useState(false);
@@ -70,13 +70,6 @@ export default function RatedMoviesPage({ genres }: any) {
     );
   };
 
-  useEffect(() => {
-    const tempIndexStorage = readLocalStorageValue<any[]>({
-      key: "indexStorage",
-    });
-    setDataSliced(chunk(getData(tempIndexStorage), 20));
-  }, [indexStorage]);
-
   const getDataRevalidated = async (dataToRevalidate: number[]) => {
     try {
       const res = await axios.post(
@@ -87,11 +80,13 @@ export default function RatedMoviesPage({ genres }: any) {
         const element = res.data[index];
         switch (element.responseCode) {
           case 200:
+            // fetch completed, replacing data with a fresh one
             delete element.responseCode;
             element.timeOfCreation = Date.now();
             localStorage.setItem("JSON" + element.id, JSON.stringify(element));
             break;
           case 429:
+            // fetch failed due to rate limit, try again in 5 minutes
             delete element.responseCode;
             const temp = JSON.parse(
               localStorage.getItem("JSON" + element.id) || "{}"
@@ -99,17 +94,42 @@ export default function RatedMoviesPage({ genres }: any) {
             temp.timeOfCreation = Date.now() - 5 * 60 * 1000; // 5 minutes
             localStorage.setItem("JSON" + element.id, JSON.stringify(temp));
             break;
-          default:
+          case 404:
+            // fetch faild due to absence of movie with such id,
+            // deleting corresponding element in local storage
             localStorage.removeItem("JSON" + element.id);
             localStorage.removeItem("UserRating" + element.id);
+            break;
+          default:
+            // on unknown response code, try again in 1 hour
+            delete element.responseCode;
+            const tempDefault = JSON.parse(
+              localStorage.getItem("JSON" + element.id) || "{}"
+            );
+            tempDefault.timeOfCreation = Date.now() - 60 * 60 * 1000; // 1 hour
+            localStorage.setItem(
+              "JSON" + element.id,
+              JSON.stringify(tempDefault)
+            );
             break;
         }
       }
     } catch (error: any) {
-      console.error(error);
+      // do nothing on error
     }
   };
 
+  // creates list of rated films
+  // on page load and on local storage change
+  useEffect(() => {
+    const tempIndexStorage = readLocalStorageValue<any[]>({
+      key: "indexStorage",
+    });
+    setDataSliced(chunk(getData(tempIndexStorage), 20));
+  }, [indexStorage]);
+
+  // cheсks of any data in local storage is outdated
+  // on page load and on pagination change
   useEffect(() => {
     type element = { id: number; timeOfCreation: number };
     const tempIndexStorage = readLocalStorageValue<any[]>({
@@ -164,7 +184,7 @@ export default function RatedMoviesPage({ genres }: any) {
           </div>
         )
       ) : (
-        <div className={styles.test}>
+        <div className={styles.frameMain}>
           <div id="top" className={styles.frame1}>
             <div className={styles.divTop}>
               <p className={styles.p}>{"Rated movies"}</p>
@@ -189,7 +209,7 @@ export default function RatedMoviesPage({ genres }: any) {
               />
             </div>
           </div>
-          <div className={styles.frame2RatedMovies}>
+          <div className={styles.frame2}>
             {dataSliced.length === 0 ? (
               <MoviesNotFound />
             ) : (

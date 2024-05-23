@@ -15,7 +15,7 @@
   width: 90%;
   left: calc(50% - (90% / 2));
   top: calc(50% - (40% / 2));
-  aspect-ratio: calc(656 / 325);
+  aspect-ratio: 656 / 325;
 }
 .boxSVG {
   width: calc(100% * 0.8262);
@@ -37,14 +37,14 @@
   justify-content: space-between;
   align-items: center;
   width: 100%;
-  aspect-ratio: calc(656/196);
+  aspect-ratio: 656/196;
 }
 
 .boxSVG {
-  aspect-ratio: calc(542/41);
+  aspect-ratio: 542/41;
 }
 
-.box1 {
+.frame {
   display: flex;
   flex-direction: column;
   justify-content: space-between;

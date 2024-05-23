@@ -9,11 +9,11 @@ import Link from "next/link";
 import numberToCount from "@/utils/numberToCount";
 import generateGenresString from "@/utils/generateGenresString";
 import { useMediaQuery } from "@mantine/hooks";
+import truncateString from "@/utils/truncateString";
 
 export default function MovieCard({ prop, genres, isLoading }: any) {
   const isMobile = useMediaQuery("(max-width: 560px)");
   const [imageLoader, setImageLoader] = useState({ zIndex: "7" });
-
   const genresData = prop.genre_ids || prop.genres;
 
   return (
@@ -27,7 +27,9 @@ export default function MovieCard({ prop, genres, isLoading }: any) {
               <div className={styles.frameMobile}>
                 <div className={styles.topMobile}>
                   <Link href={"/movies/" + prop.id} className={styles.link}>
-                    <p className={styles.name}>{prop.original_title}</p>
+                    <p className={styles.name}>
+                      {truncateString(prop.original_title, 80)}
+                    </p>
                   </Link>
                   <UserRating prop={prop} />
                 </div>
@@ -122,7 +124,9 @@ export default function MovieCard({ prop, genres, isLoading }: any) {
                 <div className={styles.movieDescription}>
                   <div className={styles.nameDateRating}>
                     <Link href={"/movies/" + prop.id} className={styles.link}>
-                      <p className={styles.name}>{prop.original_title}</p>
+                      <p className={styles.name}>
+                        {truncateString(prop.original_title, 80)}
+                      </p>
                     </Link>
                     <p className={styles.date}>
                       {prop.release_date

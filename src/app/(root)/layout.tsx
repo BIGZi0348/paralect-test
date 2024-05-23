@@ -3,6 +3,8 @@
 import Sidebar from "@/components/Sidebar/Sidebar";
 import { useEffect, useState } from "react";
 
+// layout for page in (root)
+
 export default function RootLayout({
   children,
 }: Readonly<{

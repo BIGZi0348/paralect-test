@@ -64,6 +64,7 @@ export default function UserRating({ prop }: any) {
   }, [value]);
 
   useEffect(() => {
+    // copying movie data everywhere, but in "/rated"
     if (pathname !== "/rated") {
       try {
         const propJSON = JSON.parse(
@@ -73,7 +74,9 @@ export default function UserRating({ prop }: any) {
           prop.timeOfCreation = Date.now();
           localStorage.setItem("JSON" + prop.id, JSON.stringify(prop));
         }
-      } catch (error: any) {}
+      } catch (error: any) {
+        // do nothing on error
+      }
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);

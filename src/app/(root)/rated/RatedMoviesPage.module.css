@@ -1,11 +1,11 @@
 @media (min-width: 1700px) {
-  .test {
+  .frameMain {
     left: calc((100% - 980px) / 2);
   }
 }
 
 @media (max-width: 1700px) {
-  .test {
+  .frameMain {
     left: calc(280px + (100% - 980px - 280px) / 2);
   }
 }
@@ -17,7 +17,7 @@
 }
 
 @media (max-width: 1366px) {
-  .test {
+  .frameMain {
     left: calc(228px + (100% - 980px - 228px) / 2);
   }
   .ratedMoviesNotFound {
@@ -26,7 +26,7 @@
 }
 
 @media (min-width: 1250px) {
-  .test {
+  .frameMain {
     width: 980px;
   }
   .textInputSearch {
@@ -35,7 +35,7 @@
 }
 
 @media (max-width: 1250px) {
-  .test {
+  .frameMain {
     width: calc(75% - 228px);
     left: calc(228px + (100% - 228px - (75% - 228px)) / 2);
   }
@@ -52,27 +52,27 @@
 }
 
 @media (max-width: 990px) {
-  .test {
+  .frameMain {
     width: 500px;
     left: calc(228px + (100% - 228px - 500px) / 2);
   }
 }
 
 @media (max-width: 800px) {
-  .test {
+  .frameMain {
     width: 63.75%;
     left: calc(228px + (100% - 228px - 63.75%) / 2);
   }
 }
 
 @media (min-width: 740px) {
-  .test {
+  .frameMain {
     top: 40px;
   }
 }
 
 @media (max-width: 740px) {
-  .test {
+  .frameMain {
     width: 500px;
     top: 120px;
     left: calc((100% - 500px) / 2);
@@ -83,7 +83,7 @@
 }
 
 @media (max-width: 560px) {
-  .test {
+  .frameMain {
     width: 88%;
     left: calc(12% / 2);
   }
@@ -95,7 +95,7 @@
   }
 }
 
-.test{
+.frameMain{
   flex-direction: column;
   position: absolute;
   display: flex;
@@ -113,7 +113,7 @@
   margin-bottom: 40px;
 }
 
-.frame2RatedMovies {
+.frame2 {
   flex-direction: column;
   align-items: flex-end;
   padding: 0px;

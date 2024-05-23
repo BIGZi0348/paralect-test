@@ -20,6 +20,7 @@ export default function MoviesPage({ data, genres }: any) {
   const isMobile = useMediaQuery("(max-width: 740px)");
   const [isPending, startTransition] = useTransition();
   const router = useRouter();
+
   const reFetchData = () => {
     setTimeout(() => {
       startTransition(() => {
@@ -33,7 +34,7 @@ export default function MoviesPage({ data, genres }: any) {
       {isServer ? (
         <Loader color="#9854F6" className={styles.loader} />
       ) : (
-        <div className={styles.test}>
+        <div className={styles.frameMain}>
           {isMobile ? (
             <></>
           ) : (
@@ -41,20 +42,17 @@ export default function MoviesPage({ data, genres }: any) {
               <p className={styles.p}>{"Movies"}</p>
             </div>
           )}
-          <div className={styles.frame2Movies}>
-            <Suspense>
-              {isMobile ? (
-                <div className={styles.frame1}>
-                  <p className={styles.p}>{"Movies"}</p>
-                  <MobileSearchButton
-                    reFetchData={reFetchData}
-                    genres={genres}
-                  />
-                </div>
-              ) : (
+          <div className={styles.frame2}>
+            {isMobile ? (
+              <div className={styles.frame1}>
+                <p className={styles.p}>{"Movies"}</p>
+                <MobileSearchButton reFetchData={reFetchData} genres={genres} />
+              </div>
+            ) : (
+              <Suspense>
                 <SearchInputs reFetchData={reFetchData} genres={genres} />
-              )}
-            </Suspense>
+              </Suspense>
+            )}
 
             {data === null || data.results.length === 0 ? (
               <MoviesNotFound />

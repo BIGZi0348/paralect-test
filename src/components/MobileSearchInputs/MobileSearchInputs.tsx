@@ -6,6 +6,8 @@ import { useQueryState } from "nuqs";
 import ScrollableInputFieldMultiselect from "../ScrollableInputFieldMultiselect/ScrollableInputFieldMultiselect";
 import ScrollableInputField from "../ScrollableInputField/ScrollableInputField";
 import NumberInputField from "../NumberInputField/NumberInputField";
+import generateArrayOfYears from "@/utils/generateArrayOfYears";
+import generateSortByArray from "@/utils/generateSortByArray";
 
 export default function MobileSearchInputs({ genres, reFetchData }: any) {
   const [valueRatingFrom, setValueRatingFrom] =
@@ -19,16 +21,6 @@ export default function MobileSearchInputs({ genres, reFetchData }: any) {
   );
   const [isResetFiltersButtonDisabled, setIsResetFiltersButtonDisabled] =
     useState(true);
-
-  // Couldn't find any better way then manually search for min/max release year
-  const releaseYear = () => {
-    const arr = [];
-    for (let index = 0; index < 158; index++) {
-      const temp = (2031 - index).toString();
-      arr.push({ label: temp, value: temp });
-    }
-    return arr;
-  };
 
   const onClickResetFilters = () => {
     setValueRatingFrom(null);
@@ -76,7 +68,7 @@ export default function MobileSearchInputs({ genres, reFetchData }: any) {
             value={primaryReleaseYear}
             setValue={setPrimaryReleaseYear}
             placeHolder={"Select release year"}
-            data={releaseYear()}
+            data={generateArrayOfYears()}
             onChange={() => {
               setPage(null);
             }}
@@ -114,20 +106,7 @@ export default function MobileSearchInputs({ genres, reFetchData }: any) {
             onChange={() => {
               setPage(null);
             }}
-            data={[
-              { label: "Most Popular", value: "popularity.desc" },
-              { label: "Least Popular", value: "popularity.asc" },
-              { label: "Most Rated", value: "vote_average.desc" },
-              { label: "Least Rated", value: "vote_average.asc" },
-              { label: "Most Voted", value: "vote_count.desc" },
-              { label: "Least Voted", value: "vote_count.asc" },
-              { label: "Most Profitable", value: "revenue.desc" },
-              { label: "Least Profitable", value: "revenue.asc" },
-              { label: "A-Z", value: "original_title.desc" },
-              { label: "Z-A", value: "original_title.asc" },
-              { label: "Oldest", value: "primary_release_date.asc" },
-              { label: "Newest", value: "primary_release_date.desc" },
-            ]}
+            data={generateSortByArray()}
           />
         </div>
         <div className={styles.sortResetFilters}>

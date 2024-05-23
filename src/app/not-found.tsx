@@ -21,7 +21,7 @@ export default async function Custom404() {
         <PageNotFound className={styles.boxSVG} />
         <ColorBlocks />
       </div>
-      <div className={styles.box1}>
+      <div className={styles.frame}>
         <p className={styles.p}>
           {"We can't find the page you are looking for"}
         </p>

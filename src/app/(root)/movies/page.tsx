@@ -4,6 +4,7 @@ import type { Metadata } from "next";
 import MoviesPage from "./MoviesPage";
 import { z } from "zod";
 import generateGenresString from "@/utils/generateGenresString";
+import generateSortByArray from "@/utils/generateSortByArray";
 
 export async function generateMetadata(): Promise<Metadata> {
   return {
@@ -49,20 +50,7 @@ const getData = async (searchParams: any, genres: any[]) => {
     if (searchParams.sort_by) {
       const sort_bySafe = schemaForValidationSort.parse(searchParams.sort_by);
 
-      const sortInputs = [
-        { label: "Most Popular", value: "popularity.desc" },
-        { label: "Least Popular", value: "popularity.asc" },
-        { label: "Most Rated", value: "vote_average.desc" },
-        { label: "Least Rated", value: "vote_average.asc" },
-        { label: "Most Voted", value: "vote_count.desc" },
-        { label: "Least Voted", value: "vote_count.asc" },
-        { label: "Most Profitable", value: "revenue.desc" },
-        { label: "Least Profitable", value: "revenue.asc" },
-        { label: "A-Z", value: "original_title.desc" },
-        { label: "Z-A", value: "original_title.asc" },
-        { label: "Oldest", value: "primary_release_date.asc" },
-        { label: "Newest", value: "primary_release_date.desc" },
-      ];
+      const sortInputs = generateSortByArray();
 
       if (
         sortInputs.some((element: { label: string; value: string }) => {

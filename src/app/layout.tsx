@@ -7,6 +7,8 @@ import AFLogo from "@/components/AFLogo/AFLogo";
 
 const inter = Inter({ subsets: ["latin"] });
 
+// layout for ALL pages
+
 export default function RootLayout({
   children,
 }: Readonly<{
