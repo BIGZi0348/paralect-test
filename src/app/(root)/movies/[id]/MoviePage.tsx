@@ -105,13 +105,13 @@ export default async function MoviePage({ prop }: any) {
                           {item.logo_path ? (
                             <Image
                               src={
-                                "https://image.tmdb.org/t/p/original" +
+                                "https://image.tmdb.org/t/p/w154" +
                                 item.logo_path
                               }
                               alt={item.name}
                               priority={true}
                               fill={true}
-                              sizes="100vw"
+                              sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                               style={{ objectFit: "contain" }}
                             />
                           ) : (
