@@ -22,6 +22,9 @@ export default function Sidebar() {
       case "/rated":
         result = 1;
         break;
+      case "/about":
+        result = 2;
+        break;
       default:
         break;
     }
@@ -32,6 +35,7 @@ export default function Sidebar() {
   const linksData = [
     { id: 0, label: "Movies", href: "/movies" },
     { id: 1, label: "Rated movies", href: "/rated" },
+    { id: 2, label: "About", href: "/about" },
   ];
 
   const links = linksData.map((link) => (
